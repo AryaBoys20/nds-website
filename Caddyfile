@@ -5,9 +5,7 @@
 }
 
 :{$PORT:80} {
-    root * /app
-    
-    # Caddy perlu mengetahui root untuk php_server
+    encode zstd br gzip
     php_server {
         root /app
         try_files {path} {path}/index.php index.php
