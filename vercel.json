@@ -10,7 +10,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/web"
+      "destination": { "service": "web" }
     }
   ]
 }
