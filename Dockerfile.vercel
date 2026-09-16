@@ -1,0 +1,21 @@
+# Dockerfile.vercel
+# ============================================
+# FrankenPHP untuk Vercel - PHP Application
+# ============================================
+FROM dunglas/frankenphp:latest
+
+# Set working directory
+WORKDIR /app
+
+# Copy semua file proyek ke dalam container
+COPY . /app
+
+# Pastikan direktori logs ada (untuk error_log)
+RUN mkdir -p /app/logs && chmod 777 /app/logs
+
+# Expose port (FrankenPHP default 80, Vercel akan mapping otomatis)
+EXPOSE 80
+
+# Environment default
+ENV APP_ENV=production
+ENV SERVER_NAME=:80

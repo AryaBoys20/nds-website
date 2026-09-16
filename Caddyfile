@@ -1,0 +1,17 @@
+# Caddyfile
+# ============================================
+# Konfigurasi FrankenPHP untuk Vercel
+# ============================================
+{
+    frankenphp
+    auto_https off
+    admin off
+}
+
+:{$PORT:80} {
+    root * /app
+    encode gzip
+    php_server {
+        try_files {path} {path}/index.php index.php
+    }
+}

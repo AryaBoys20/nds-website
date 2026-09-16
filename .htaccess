@@ -1,0 +1,22 @@
+# .htaccess
+<FilesMatch "\.(php|inc|sql|log)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<Files "index.php">
+    Order allow,deny
+    Allow from all
+</Files>
+
+<Files "detail.php">
+    Order allow,deny
+    Allow from all
+</Files>
+
+Options -Indexes
+
+# Redirect ke HTTPS (opsional)
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
