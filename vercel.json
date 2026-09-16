@@ -3,7 +3,7 @@
   "services": {
     "web": {
       "runtime": "container",
-      "dockerfile": "Dockerfile.vercel"
+      "entrypoint": "Dockerfile.vercel"
     }
   },
   "rewrites": [
